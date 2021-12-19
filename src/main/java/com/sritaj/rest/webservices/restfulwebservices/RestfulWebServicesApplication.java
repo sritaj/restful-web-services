@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.sritaj.rest.webservices.controllers")
+@ComponentScan("com.sritaj.rest.webservices.*")
 public class RestfulWebServicesApplication {
 
 	public static void main(String[] args) {
