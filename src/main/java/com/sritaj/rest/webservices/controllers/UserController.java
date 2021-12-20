@@ -40,4 +40,14 @@ public class UserController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
+
+    @DeleteMapping(path = "deleteuser/{id}")
+    public void deleteUser(@PathVariable int id){
+        User user = userDaoService.deleteUser(id);
+
+        if(user == null){
+            throw new UserNotFoundException("Specified user with id " + id + " is not found");
+        }
+
+    }
 }
